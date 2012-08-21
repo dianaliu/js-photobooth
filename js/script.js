@@ -1,14 +1,19 @@
-/* Author: Diana Liu.
+// Fix for bootstrap fluid thumbnails offset issue https://github.com/twitter/bootstrap/issues/3494
+(function($){
+	
+	// delegate this
+	
+    $('.row-fluid ul.thumbnails li.span6:nth-child(2n + 3)').css('margin-left','0px');
+    $('.row-fluid ul.thumbnails li.span5:nth-child(2n + 3)').css('margin-left','0px');
+    $('.row-fluid ul.thumbnails li.span4:nth-child(3n + 4)').css('margin-left','0px');
+    $('.row-fluid ul.thumbnails li.span3:nth-child(4n + 5)').css('margin-left','0px'); 
 
-*/
-
-
+})(jQuery);
 
 
 $(function() {
 	
 
-	
 	navigator.getUserMedia = navigator.webkitGetUserMedia || navigator.getUserMedia;
 	window.URL = window.URL || window.webkitURL;
 
@@ -22,9 +27,160 @@ $(function() {
 	var image;
 	var overlay;
 	var frame_choice = null;
+	var default_overlay_items = ['frame_unicorn.png', 'frame_2.png', 'frame_4.png', 'frame_5.png'];
+	var overlay_item_template = "<li class='span6'><div class='thumbnail'><img src='{{src}}' alt='' /> </div></li>";
+	var gallery_item_template = "<li class='span5'><div class='thumbnail'><img src='{{src}}'><a href='{{src}}' target='_blank'><img src='img/download-white-100-70.png' class='hover hover-original'></a><span><img src='img/remove-50.png' class='hover hover-delete'></span></div></li>";
 	
-	init();
+	
+	// ==============================  
+	// 		Backbone Shizz
+	// ==============================
+	
+	var Photo = Backbone.Model.extend({
+		src: "http://placehold.it/193x145"
+	});
+	
+	var PhotoCollection = Backbone.Collection.extend({
+		localStorage: new Backbone.LocalStorage("PhotoCollection"),
+		model: Photo
+	});
+	
+	var GalleryItemView = Backbone.View.extend({
+		tagName: "li",
+		events: {
+			"click .hover-delete": "remove",
+			"hover .thumbnail": "toggle"		
+		},
+		initialize: function() {
+			_.bindAll(this, "render", "remove", "unrender", "toggle");
+			this.model.bind("remove", this.unrender); // If the model is deleted, unrender.
+		},
+		render: function() {			
+			$(this.el).html("<div class='thumbnail'><img src='" + this.model.get("src") + "'><a href='" + this.model.get("src") + "' target='_blank'><img src='img/download-white-100-70.png' class='hover hover-original'></a><span><img src='img/remove-50.png' class='hover hover-delete'></span></div>");
+			
+			$(this.el).addClass("span5");
+			
+			return this; // for method chaining
+		},
+		unrender: function() {
+			$(this.el).remove();	
+		},
+		remove: function() {
+			this.model.destroy(); // triggers unrender
+		},
+		toggle: function(e) {
+			// FIXME: Weird delay and gets stuck.
+			$(".hover-original", e.target).toggleClass("block");
+			$(".hover-delete", e.target).toggleClass("block");
+			console.log("toggle");
+		}		
+	});
 
+
+	GalleryListView = Backbone.View.extend({
+		el: $("div"),
+		id: "gallery",
+		events: { // Selectors only search descendents.
+			"click #capture": "capture",
+			"click #remove": "clear_frames"
+		},
+		initialize: function() {
+			
+			_.bindAll(this, "render", "appendItem", "capture"); // Each function that uses this must be bound
+			
+			this.collection = new PhotoCollection();
+			this.collection.bind("add", this.appendItem); // appendItem after adding to collection
+
+			this.collection.fetch();
+
+			this.render();
+		},
+		render: function() {
+			var self = this;
+			
+			_(this.collection.models).each(function(item) {
+				self.appendItem(item);	
+			}, this);
+		},
+		appendItem: function(item) {		
+			var galleryItemView = new GalleryItemView({
+				model: item,
+				collection: this.collection
+			});
+			
+			$("ul#gallery-list", this.el).append(galleryItemView.render().el);
+		},
+		capture: function() {			
+			layersContainer.markRectsDamaged();	
+			layersContainer.redraw();
+			var p = new Photo();
+			p.set("src", canvas.toDataURL('image/png'));
+			this.collection.create(p); // create is add and sync.
+	
+			return false;	
+		},
+		clear_frames: function(e) {
+			if(frame_choice) {
+				frame_choice =  null;
+				$("#canvas-preview").html("");
+				layersContainer.markRectsDamaged();	
+				layersContainer.redraw();
+				console.log("clear frames");
+			}
+		}
+	});
+
+	var galleryListView = new GalleryListView();
+
+	
+	// ==============================  
+	// 		Camera Shizz
+	// ==============================
+	
+	function init(el) {
+		
+		// Initialize Camera feed
+		if (!navigator.getUserMedia) {
+		    document.getElementById('errorMessage').innerHTML = 'Sorry. <code>navigator.getUserMedia()</code> is not available.';
+		    return;
+		  }
+		  navigator.getUserMedia({video: true}, gotStream, noStream);
+		
+		
+		$.each(default_overlay_items, function(i, item) {
+			$('#frames').append(Mustache.render(overlay_item_template, {src: ("img/" + item	)}));
+		});
+		
+		
+	}
+	
+	function initCanvas() {
+		
+		console.log("Initalize canvas layers.");
+		
+		layersContainer = new CanvasLayers.Container(canvas, true);	 // Allow transparency!
+		layersContainer.onRender = function(layer, rect, context) {		
+	    }
+		
+		image = new CanvasLayers.Layer(0, 0, canvas.width, canvas.height);
+		image.onRender = function(layer, rect, context) {
+			context.drawImage(video, 0, 0);
+		}
+		
+		// For now, we'll have just one frame at a time.
+		overlay = new CanvasLayers.Layer(0, 0, canvas.width, canvas.height);
+		overlay.onRender = function(layer, rect, context) {
+
+			if(null != frame_choice) {
+				context.drawImage(frame_choice, 0, 0);
+			} 
+		}
+				
+		layersContainer.getChildren().add(image); // Added first, will be on bottom.
+		layersContainer.getChildren().add(overlay);
+		image.lowerToBottom(); // Just to be sure.	
+	}
+	
 	function gotStream(stream) {
 	  if (window.URL) {
 	    video.src = window.URL.createObjectURL(stream);
@@ -48,177 +204,61 @@ $(function() {
 	  setTimeout(function() {
 	    canvas.width = video.videoWidth;
 	    canvas.height = video.videoHeight;
-//		console.log("after timeout, set video height and width to " + canvas.height + " and " + canvas.width);
-
-		// Initalize Canvas Layers
 		initCanvas();
-//		console.log("After init, layersContainer.children = " + layersContainer.children.length());
-//		layersContainer.redraw();
-		
 	  }, 50);
 	}
 	
-	
-	function initCanvas() {
-		
-		console.log("Initalizating canvas layers.");
-		
-		layersContainer = new CanvasLayers.Container(canvas, true);	 // Allow transparency!
-		layersContainer.onRender = function(layer, rect, context) {		
-//			console.log("render layersContainer w:" + this.getWidth() + " h:" + this.getHeight());
-	    }
-		
-//		console.log("Before init, layersContainer.children = " + layersContainer.children.length());
-		
-		
-		image = new CanvasLayers.Layer(0, 0, canvas.width, canvas.height);
-		image.onRender = function(layer, rect, context) {
-			context.drawImage(video, 0, 0);
-//			console.log("renderd video w:" + this.getWidth() + " h:" + this.getHeight());
-		}
-		
-		// For now, we'll have just one frame at a time.
-		// FIXME: Adding a new layer for each capture()
-		overlay = new CanvasLayers.Layer(0, 0, canvas.width, canvas.height);
-		overlay.onRender = function(layer, rect, context) {
-
-			if(null != frame_choice) {
-				context.drawImage(frame_choice, 0, 0);
-//				console.log("rendered overlay");				
-			} else {
-//				console.log("No frame choice, don't render overlay. w:" + this.getWidth() + " h:" + this.getHeight());
-			}
-
-		}
-				
-		layersContainer.getChildren().add(image); // Added first, will be on bottom.
-		layersContainer.getChildren().add(overlay);
-		image.lowerToBottom(); // Just to be sure.
-		
-				
-	}
-	
 	function noStream(e) {
-	  var msg = 'No camera available.';
-	  if (e.code == 1) {
-	    msg = 'User denied access to use camera.';
-	  }
-		console.log(msg);
-	}
-
-	function capture() { 
-//	    ctx.drawImage(video, 0, 0);
-
-
-
-		// Mark that the canvas has changed, then re-render.
-		layersContainer.markRectsDamaged();	
-		layersContainer.redraw();
-	
-		// Temporary: Draw straight to canvas
-//		if(frame_choice) {
-//			ctx.drawImage(frame_choice, 0, 0);
-//		}
-
-	    var img = document.createElement('img');
-	    img.src = canvas.toDataURL('image/webp');	
-	
-		// Clear canvas of frame
-//		if(frame_choice) {
-//			ctx.drawImage(video, 0, 0);
-//			frame_choice = null;			
-//		}
-
-		var hover_link = $(document.createElement("a"));
-		hover_link.attr("href", img.src);
-		hover_link.attr("target", "_blank");
-			
-		var hover_image = $(document.createElement('img'));
-		hover_image.attr("src", "img/download-white-100-70.png");
-		hover_image.addClass("hover").addClass("hover-thumbnail");
 		
-		var hover_wrapper = $(document.createElement('span'));
-		var hover_delete = $(document.createElement('img'));
-		hover_delete.attr("src", "img/remove-50.png");
-		hover_delete.addClass("hover").addClass("hover-delete");
-		hover_wrapper.append(hover_delete);
-		
-		var list = $(document.createElement("li"));
-		list.addClass("span5");
-		var div = $(document.createElement("div"));
-		div.addClass("thumbnail"); // 189 x 144
-		
-		div.append(img);
-		hover_link.append(hover_image);
-		div.append(hover_link);
-		div.append(hover_wrapper);
-		list.append(div);	
-	    gallery.append(list);
-	}
-
-	function init(el) {
-		
-		// Initialize Camera feed
-		if (!navigator.getUserMedia) {
-		    document.getElementById('errorMessage').innerHTML = 'Sorry. <code>navigator.getUserMedia()</code> is not available.';
-		    return;
+		var msg = 'No camera available.';
+			  if (e.code == 1) {
+			    msg = 'User denied access to use camera.';
 		  }
-		  navigator.getUserMedia({video: true}, gotStream, noStream);
-	}	
-	  
 
+		$("#vid").css("background-image", "url('img/error-75.png')");
+		console.log(msg);		
+	}
+ 
 
-	$("#snap").click(capture);
+	// ==============================  
+	// 		Register Events
+	// ============================== 
 	
-	// Must delegate because these elements aren't initally in dom.
-	$("#gallery-list").delegate(".thumbnail", "hover", function() {
-		$(this).find(".hover-thumbnail").toggleClass("block");
-		$(this).find(".hover-delete").toggleClass("block");
-//		console.log("hovered");
-	});
-	
-	$("#gallery-list").delegate(".hover-delete", "click", function() {
-		var list = $(this).closest("li");
-		list.fadeOut('slow').remove();
-//		console.log("remove list element.");
-	});
-	
-	$("#frames").find("img").click(function() {
-		frame_choice = this;
+	$("#frames").on("click", "img", function (e) {
+		frame_choice = e.target;
 		
 		f = document.createElement("img");
 		f.src = this.src;
 		$("#canvas-preview").html(f);
-		
-//		console.log("Clicked a frame: " + $(this).attr("src"));
-//		ctx.drawImage(this, 0, 0); // It needs the entire image element.
 	});
-	
-	
+
+	// Rename to "clear".
 	$("#remove").click(function() {
 
-		// Actually, just clear out the frame but keep the layer there for drawing.
-//		console.log("layersContainer.getChildren().length() = " + layersContainer.getChildren().length());
+		// Clear out the frame but keep the layer there for drawing.
 		if(frame_choice) {
 			frame_choice =  null;
 			$("#canvas-preview").html("");
 			layersContainer.markRectsDamaged();	
 			layersContainer.redraw();
 		}
-
-
-		// TODO: Use getLayerIndex to choose a specific one.
-//		for(i = 0; layersContainer.getChildren().length() > 2; i++) {
-//			console.log("Removed layer at index " + i);
-//			trash = layersContainer.children.at(i);
-//			layersContainer.getChildren().remove(trash);			
-//		}
-		
-
-		
+	
 	});
 
+	$("#add-frame").submit(function() {
+		
+		// TODO: Real uploading.
+		var s = $("input").val();
+		var new_img = new Photo();
+		new_img.set("src", s);			
+		var new_img_html = Mustache.render(overlay_item_template, new_img);	
+		$("#frames").append(new_img_html);
+		
+		return false;
+	});
 	
 	
+	init();
 });
+
 

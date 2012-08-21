@@ -219,13 +219,21 @@ td { vertical-align: top; }
    ========================================================================== */
 
 
+body {
+	background-image: url('../img/wreaths.png');
+}
+
+.main {
+//	padding-top: 15px;
+}
+
 #vid {
 	height: 480px;
 	width: 640px;
 	border: 1px black solid;
+	background-color: #eee;
 	background-image: url('../img/loading.gif');
 	background-repeat: no-repeat;
-	background-attachment: fixed;
 	background-position: center;
 }
 
@@ -246,10 +254,13 @@ td { vertical-align: top; }
 }
 
 
+#frames .thumbnail {
+	background-color: whiteSmoke;
+}
+
 .thumbnail {
 	position: relative;
 }
-
 
 .hover {
 	display: none; 
@@ -271,6 +282,17 @@ td { vertical-align: top; }
 .block {
 	display: block;
 }
+
+
+/* Fix for bootstrap fluid thumbnails offset issue
+ * https://github.com/twitter/bootstrap/issues/3494
+ */
+.row-fluid ul.thumbnails li.span12 + li { margin-left : 0px; }
+.row-fluid ul.thumbnails li.span6:nth-child(2n + 3) { margin-left : 0px; }
+.row-fluid ul.thumbnails li.span5:nth-child(2n + 3) { margin-left : 0px; }
+.row-fluid ul.thumbnails li.span4:nth-child(3n + 4) { margin-left : 0px; }
+.row-fluid ul.thumbnails li.span3:nth-child(4n + 5) { margin-left : 0px; }
+
 
 /**
 .thumbnail:hover .hover-thumbnail {
