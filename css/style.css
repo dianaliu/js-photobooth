@@ -248,9 +248,12 @@ body {
 	left: 0px;
 }
 
+#controls {
+	margin: 7px;
+}
+
 #gallery {
-//	height: 145px;
-//	overflow: auto;
+
 }
 
 
@@ -284,6 +287,7 @@ body {
 }
 
 
+
 /* Fix for bootstrap fluid thumbnails offset issue
  * https://github.com/twitter/bootstrap/issues/3494
  */
@@ -313,9 +317,7 @@ body {
 #camera {
 }
 
-#controls {
-	margin: 5px 0px;
-}
+
 
 #photo-strip {
 	margin: 5px 0px;
