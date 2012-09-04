@@ -39,89 +39,50 @@
   </header>
 
 <div role="main">
-	
-	<!-- 
-	<div class="navbar navbar-fixed-bottom">
-		<div class="navbar-inner">
-		    <div class="container">
-				<ul class="nav pull-right">
-				  <li class="active">
-				    <a href="#">Home!</a>
-				  </li>
-				  <li><a href="#">Settings!</a></li>
-				  <li><a href="#">Link!</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	-->
-
 
 	<div class="container-fluid main">
 	
 		<div class="row-fluid">
 		
-			<div class="span4" id="left-bar">
-				<div class="tabbable"> <!-- Only required for left/right tabs -->
-				  <ul class="nav nav-tabs">
-				    <li class="active"><a href="#tab1" data-toggle="tab">Frames</a></li>
-				    <li><a href="#tab2" data-toggle="tab">Stickers</a></li>
-				  </ul>
-				  <div class="tab-content">
-				    <div class="tab-pane active" id="tab1">
-						<form  id="add-frame" class="well form-inline">
-							<label>Add your own frame:</label>
-							<input type="text" class="input-medium" placeholder="Image path (640x480)">
-							<button type="submit" class="btn"><i class="icon-plus"></i></button>
-						</form>
-
-
-						<ul class="thumbnails" id="frames">
-		
-						</ul>
+			<div class="span4">
 			
-				    </div>
-				
-				    <div class="tab-pane" id="tab2">
-				      <p>Howdy, I'm in Section 2.</p>
-				    </div>
-				
-				  </div>
-				</div>
+				<form  id="add-frame" class="well form-inline">
+					<label>Add your own frame:</label>
+					<input type="text" class="input-medium" placeholder="Image path (640x480)">
+					<button type="submit" class="btn"><i class="icon-plus"></i></button>
+				</form>
+
+				<ul class="thumbnails" id="frames">
+				</ul>
 
 			</div>
 		
 		
 
-				<div class="row-fluid span8">
-					
-					<div id="camera">
-						<video id="vid" autoplay>Sorry, your browser isn't supported.</video>
-						<div id="canvas-preview"></div>
-					</div>
-
-
-					<div class="row-fluid" id="gallery">
-						<!-- Fluid offsets will work in 2.1.0 release of bootstrap -->
-						<div class="span4"></div>
-						<div id="controls">
-							<button class="btn btn-primary" id="capture">Take a Picture</button>
-							<button class="btn btn-danger" id="remove">Clear Frames</button>	
-						</div>
-						
-						<ul class="thumbnails" id="gallery-list">
-
-								<!-- If no pictures, "choose a sticker to get started"-->
-								
-						</ul>
-					</div>
-					<canvas id="photo" style="display:none"></canvas>
-					
-					
+			<div class="row-fluid span8">
+				
+				<div id="camera">
+					<video id="vid" autoplay>Sorry, your browser isn't supported.</video>
+					<div id="canvas-preview"></div>
 				</div>
 
-			
-			
+
+				<div class="row-fluid" id="gallery">
+					<!-- Fluid offsets will work in 2.1.0 release of bootstrap -->
+					<div class="span4"></div>
+					<div id="controls">
+						<button class="btn btn-primary" id="capture">Take Picture</button>
+						<button class="btn btn-danger" id="remove">Clear Frames</button>	
+					</div>
+					
+					<ul class="thumbnails" id="gallery-list">							
+					</ul>
+				</div>
+				<canvas id="photo" style="display:none"></canvas>
+				
+				
+			</div>
+	
 		
 	  	</div>
 	</div>

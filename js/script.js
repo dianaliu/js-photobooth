@@ -213,7 +213,6 @@ GalleryListView = Backbone.View.extend({
 
 	$("#frames").on("click", "img", function (e) {
 		frame_choice = e.target;
-		
 		f = document.createElement("img");
 		f.src = this.src;
 		$("#canvas-preview").html(f);
