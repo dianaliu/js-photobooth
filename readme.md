@@ -1,1 +1,0 @@
-Playing around with [video in html5] (http://www.html5rocks.com/en/tutorials/getusermedia/intro/) for Chrome. Inspired by the glorious [Lisa Frank camera app] (http://itunes.apple.com/us/app/lisa-frank-pic-n-share/id525555615?mt=8).

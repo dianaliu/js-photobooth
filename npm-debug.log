@@ -1,0 +1,291 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/Users/diana/.rvm/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'generator-ember@0.7.1' ]
+2 info using npm@1.3.17
+3 info using node@v0.10.22
+4 verbose node symlink /Users/diana/.rvm/bin/node
+5 verbose cache add [ 'generator-ember@0.7.1', null ]
+6 verbose cache add name=undefined spec="generator-ember@0.7.1" args=["generator-ember@0.7.1",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'generator-ember@0.7.1',
+7 verbose parsed url   path: 'generator-ember@0.7.1',
+7 verbose parsed url   href: 'generator-ember@0.7.1' }
+8 verbose cache add name="generator-ember" spec="0.7.1" args=["generator-ember","0.7.1"]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: '0.7.1',
+9 verbose parsed url   path: '0.7.1',
+9 verbose parsed url   href: '0.7.1' }
+10 verbose addNamed [ 'generator-ember', '0.7.1' ]
+11 verbose addNamed [ '0.7.1', '0.7.1' ]
+12 silly lockFile 6f819284-generator-ember-0-7-1 generator-ember@0.7.1
+13 verbose lock generator-ember@0.7.1 /Users/diana/.npm/6f819284-generator-ember-0-7-1.lock
+14 verbose url raw generator-ember/0.7.1
+15 verbose url resolving [ 'https://registry.npmjs.org/', './generator-ember/0.7.1' ]
+16 verbose url resolved https://registry.npmjs.org/generator-ember/0.7.1
+17 info trying registry request attempt 1 at 15:30:30
+18 http GET https://registry.npmjs.org/generator-ember/0.7.1
+19 http 200 https://registry.npmjs.org/generator-ember/0.7.1
+20 silly registry.get cb [ 200,
+20 silly registry.get   { vary: 'Accept',
+20 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R15B03)',
+20 silly registry.get     etag: '"CCPUC3CLANT5QV0QCP03ZGKHP"',
+20 silly registry.get     date: 'Sun, 15 Dec 2013 20:30:32 GMT',
+20 silly registry.get     'content-type': 'application/json',
+20 silly registry.get     'content-length': '6345' } ]
+21 silly lockFile 9aae0365--ember-generator-ember-0-7-1-tgz https://registry.npmjs.org/generator-ember/-/generator-ember-0.7.1.tgz
+22 verbose lock https://registry.npmjs.org/generator-ember/-/generator-ember-0.7.1.tgz /Users/diana/.npm/9aae0365--ember-generator-ember-0-7-1-tgz.lock
+23 verbose addRemoteTarball [ 'https://registry.npmjs.org/generator-ember/-/generator-ember-0.7.1.tgz',
+23 verbose addRemoteTarball   '84bea47d22ccbc2ad4855ccc764e5c466642451b' ]
+24 info retry fetch attempt 1 at 15:30:32
+25 verbose fetch to= /var/folders/hy/7hxvqwyx2qdckrf5_kd3725w0000gn/T/npm-97902-g4WeBhqK/1387139432227-0.35424188897013664/tmp.tgz
+26 http GET https://registry.npmjs.org/generator-ember/-/generator-ember-0.7.1.tgz
+27 http 200 https://registry.npmjs.org/generator-ember/-/generator-ember-0.7.1.tgz
+28 verbose tar unpack /var/folders/hy/7hxvqwyx2qdckrf5_kd3725w0000gn/T/npm-97902-g4WeBhqK/1387139432227-0.35424188897013664/tmp.tgz
+29 silly lockFile 00c33d90-2227-0-35424188897013664-package tar:///var/folders/hy/7hxvqwyx2qdckrf5_kd3725w0000gn/T/npm-97902-g4WeBhqK/1387139432227-0.35424188897013664/package
+30 verbose lock tar:///var/folders/hy/7hxvqwyx2qdckrf5_kd3725w0000gn/T/npm-97902-g4WeBhqK/1387139432227-0.35424188897013664/package /Users/diana/.npm/00c33d90-2227-0-35424188897013664-package.lock
+31 silly lockFile f718593b-2227-0-35424188897013664-tmp-tgz tar:///var/folders/hy/7hxvqwyx2qdckrf5_kd3725w0000gn/T/npm-97902-g4WeBhqK/1387139432227-0.35424188897013664/tmp.tgz
+32 verbose lock tar:///var/folders/hy/7hxvqwyx2qdckrf5_kd3725w0000gn/T/npm-97902-g4WeBhqK/1387139432227-0.35424188897013664/tmp.tgz /Users/diana/.npm/f718593b-2227-0-35424188897013664-tmp-tgz.lock
+33 silly gunzTarPerm modes [ '755', '644' ]
+34 silly gunzTarPerm extractEntry package.json
+35 silly gunzTarPerm extractEntry .npmignore
+36 silly gunzTarPerm extractEntry lib/expected_controller_files.js
+37 silly gunzTarPerm extractEntry lib/expected_model_files.js
+38 silly gunzTarPerm extractEntry lib/expected_view_files.js
+39 silly gunzTarPerm extractEntry .editorconfig
+40 silly gunzTarPerm extractEntry .travis.yml
+41 silly gunzTarPerm extractEntry app/index.js
+42 silly gunzTarPerm extractEntry app/templates/Gruntfile.js
+43 silly gunzTarPerm extractEntry app/templates/karma.conf.js
+44 silly gunzTarPerm extractEntry app/templates/_jshintrc
+45 silly gunzTarPerm extractEntry app/templates/_package.json
+46 silly gunzTarPerm extractEntry app/templates/bowerrc
+47 silly gunzTarPerm extractEntry app/templates/editorconfig
+48 silly gunzTarPerm extractEntry app/templates/gitattributes
+49 silly gunzTarPerm extractEntry app/templates/_bower.json
+50 silly gunzTarPerm extractEntry app/templates/hbs/application.hbs
+51 silly gunzTarPerm extractEntry app/templates/hbs/index.hbs
+52 silly gunzTarPerm extractEntry app/templates/index.html
+53 silly gunzTarPerm extractEntry app/templates/test/_initializer.js
+54 silly gunzTarPerm extractEntry app/templates/test/_initializer.coffee
+55 silly gunzTarPerm extractEntry app/templates/test/integration/_index.js
+56 silly gunzTarPerm extractEntry app/templates/test/integration/_index.coffee
+57 silly gunzTarPerm extractEntry app/templates/scripts/app.js
+58 silly gunzTarPerm extractEntry app/templates/scripts/store.js
+59 silly gunzTarPerm extractEntry app/templates/scripts/app.coffee
+60 silly gunzTarPerm extractEntry app/templates/scripts/routes/application_route.js
+61 silly gunzTarPerm extractEntry app/templates/scripts/routes/application_route.coffee
+62 silly gunzTarPerm extractEntry app/templates/scripts/store.coffee
+63 silly gunzTarPerm extractEntry app/templates/styles/normalize.css
+64 silly gunzTarPerm extractEntry app/templates/styles/style.css
+65 silly gunzTarPerm extractEntry app/templates/styles/style_bootstrap.scss
+66 silly gunzTarPerm extractEntry app/templates/gitignore
+67 silly gunzTarPerm extractEntry changelog.md
+68 silly gunzTarPerm extractEntry contributing.md
+69 silly gunzTarPerm extractEntry controller/index.js
+70 silly gunzTarPerm extractEntry controller/templates/base.js
+71 silly gunzTarPerm extractEntry controller/templates/base_edit.js
+72 silly gunzTarPerm extractEntry controller/templates/plural_route.js
+73 silly gunzTarPerm extractEntry controller/templates/single_edit_route.js
+74 silly gunzTarPerm extractEntry controller/templates/single_route.js
+75 silly gunzTarPerm extractEntry .gitattributes
+76 silly gunzTarPerm extractEntry model/index.js
+77 silly gunzTarPerm extractEntry model/templates/base.js
+78 silly gunzTarPerm extractEntry .jshintrc
+79 silly gunzTarPerm extractEntry project/img/screenshots/2013_07_17.png
+80 silly gunzTarPerm extractEntry readme.md
+81 silly gunzTarPerm extractEntry router/index.js
+82 silly gunzTarPerm extractEntry router/templates/base.js
+83 silly gunzTarPerm extractEntry script/reset_dev_env.sh
+84 silly gunzTarPerm extractEntry test/test-compass.js
+85 silly gunzTarPerm extractEntry test/test-file-creation.js
+86 silly gunzTarPerm extractEntry test/test-karma.js
+87 silly gunzTarPerm extractEntry test/test-model.js
+88 silly gunzTarPerm extractEntry test/test-subgenerators.js
+89 silly gunzTarPerm extractEntry view/index.js
+90 silly gunzTarPerm extractEntry view/templates/bound_text_field_view.js
+91 silly gunzTarPerm extractEntry view/templates/plural.js
+92 silly gunzTarPerm extractEntry view/templates/single.js
+93 silly gunzTarPerm extractEntry view/templates/single_edit.js
+94 silly gunzTarPerm extractEntry view/templates/plural.hbs
+95 silly gunzTarPerm extractEntry view/templates/single.hbs
+96 silly gunzTarPerm extractEntry view/templates/single_edit.hbs
+97 silly lockFile 00c33d90-2227-0-35424188897013664-package tar:///var/folders/hy/7hxvqwyx2qdckrf5_kd3725w0000gn/T/npm-97902-g4WeBhqK/1387139432227-0.35424188897013664/package
+98 silly lockFile 00c33d90-2227-0-35424188897013664-package tar:///var/folders/hy/7hxvqwyx2qdckrf5_kd3725w0000gn/T/npm-97902-g4WeBhqK/1387139432227-0.35424188897013664/package
+99 silly lockFile f718593b-2227-0-35424188897013664-tmp-tgz tar:///var/folders/hy/7hxvqwyx2qdckrf5_kd3725w0000gn/T/npm-97902-g4WeBhqK/1387139432227-0.35424188897013664/tmp.tgz
+100 silly lockFile f718593b-2227-0-35424188897013664-tmp-tgz tar:///var/folders/hy/7hxvqwyx2qdckrf5_kd3725w0000gn/T/npm-97902-g4WeBhqK/1387139432227-0.35424188897013664/tmp.tgz
+101 verbose tar pack [ '/Users/diana/.npm/generator-ember/0.7.1/package.tgz',
+101 verbose tar pack   '/var/folders/hy/7hxvqwyx2qdckrf5_kd3725w0000gn/T/npm-97902-g4WeBhqK/1387139432227-0.35424188897013664/package' ]
+102 verbose tarball /Users/diana/.npm/generator-ember/0.7.1/package.tgz
+103 verbose folder /var/folders/hy/7hxvqwyx2qdckrf5_kd3725w0000gn/T/npm-97902-g4WeBhqK/1387139432227-0.35424188897013664/package
+104 silly lockFile 00c33d90-2227-0-35424188897013664-package tar:///var/folders/hy/7hxvqwyx2qdckrf5_kd3725w0000gn/T/npm-97902-g4WeBhqK/1387139432227-0.35424188897013664/package
+105 verbose lock tar:///var/folders/hy/7hxvqwyx2qdckrf5_kd3725w0000gn/T/npm-97902-g4WeBhqK/1387139432227-0.35424188897013664/package /Users/diana/.npm/00c33d90-2227-0-35424188897013664-package.lock
+106 silly lockFile 5735a094-enerator-ember-0-7-1-package-tgz tar:///Users/diana/.npm/generator-ember/0.7.1/package.tgz
+107 verbose lock tar:///Users/diana/.npm/generator-ember/0.7.1/package.tgz /Users/diana/.npm/5735a094-enerator-ember-0-7-1-package-tgz.lock
+108 silly lockFile 00c33d90-2227-0-35424188897013664-package tar:///var/folders/hy/7hxvqwyx2qdckrf5_kd3725w0000gn/T/npm-97902-g4WeBhqK/1387139432227-0.35424188897013664/package
+109 silly lockFile 00c33d90-2227-0-35424188897013664-package tar:///var/folders/hy/7hxvqwyx2qdckrf5_kd3725w0000gn/T/npm-97902-g4WeBhqK/1387139432227-0.35424188897013664/package
+110 silly lockFile 5735a094-enerator-ember-0-7-1-package-tgz tar:///Users/diana/.npm/generator-ember/0.7.1/package.tgz
+111 silly lockFile 5735a094-enerator-ember-0-7-1-package-tgz tar:///Users/diana/.npm/generator-ember/0.7.1/package.tgz
+112 silly lockFile 29608a56-pm-generator-ember-0-7-1-package /Users/diana/.npm/generator-ember/0.7.1/package
+113 verbose lock /Users/diana/.npm/generator-ember/0.7.1/package /Users/diana/.npm/29608a56-pm-generator-ember-0-7-1-package.lock
+114 silly lockFile 29608a56-pm-generator-ember-0-7-1-package /Users/diana/.npm/generator-ember/0.7.1/package
+115 silly lockFile 29608a56-pm-generator-ember-0-7-1-package /Users/diana/.npm/generator-ember/0.7.1/package
+116 verbose tar unpack /Users/diana/.npm/generator-ember/0.7.1/package.tgz
+117 silly lockFile 10a28961-pm-generator-ember-0-7-1-package tar:///Users/diana/.npm/generator-ember/0.7.1/package
+118 verbose lock tar:///Users/diana/.npm/generator-ember/0.7.1/package /Users/diana/.npm/10a28961-pm-generator-ember-0-7-1-package.lock
+119 silly lockFile 5735a094-enerator-ember-0-7-1-package-tgz tar:///Users/diana/.npm/generator-ember/0.7.1/package.tgz
+120 verbose lock tar:///Users/diana/.npm/generator-ember/0.7.1/package.tgz /Users/diana/.npm/5735a094-enerator-ember-0-7-1-package-tgz.lock
+121 silly gunzTarPerm modes [ '755', '644' ]
+122 silly gunzTarPerm extractEntry package.json
+123 silly gunzTarPerm extractEntry .npmignore
+124 silly gunzTarPerm extractEntry lib/expected_controller_files.js
+125 silly gunzTarPerm extractEntry lib/expected_model_files.js
+126 silly gunzTarPerm extractEntry lib/expected_view_files.js
+127 silly gunzTarPerm extractEntry .editorconfig
+128 silly gunzTarPerm extractEntry .travis.yml
+129 silly gunzTarPerm extractEntry app/index.js
+130 silly gunzTarPerm extractEntry app/templates/Gruntfile.js
+131 silly gunzTarPerm extractEntry app/templates/karma.conf.js
+132 silly gunzTarPerm extractEntry app/templates/_jshintrc
+133 silly gunzTarPerm extractEntry app/templates/_package.json
+134 silly gunzTarPerm extractEntry app/templates/bowerrc
+135 silly gunzTarPerm extractEntry app/templates/editorconfig
+136 silly gunzTarPerm extractEntry app/templates/gitattributes
+137 silly gunzTarPerm extractEntry app/templates/_bower.json
+138 silly gunzTarPerm extractEntry app/templates/hbs/application.hbs
+139 silly gunzTarPerm extractEntry app/templates/hbs/index.hbs
+140 silly gunzTarPerm extractEntry app/templates/index.html
+141 silly gunzTarPerm extractEntry app/templates/test/_initializer.js
+142 silly gunzTarPerm extractEntry app/templates/test/_initializer.coffee
+143 silly gunzTarPerm extractEntry app/templates/test/integration/_index.js
+144 silly gunzTarPerm extractEntry app/templates/test/integration/_index.coffee
+145 silly gunzTarPerm extractEntry app/templates/scripts/app.js
+146 silly gunzTarPerm extractEntry app/templates/scripts/store.js
+147 silly gunzTarPerm extractEntry app/templates/scripts/app.coffee
+148 silly gunzTarPerm extractEntry app/templates/scripts/routes/application_route.js
+149 silly gunzTarPerm extractEntry app/templates/scripts/routes/application_route.coffee
+150 silly gunzTarPerm extractEntry app/templates/scripts/store.coffee
+151 silly gunzTarPerm extractEntry app/templates/styles/normalize.css
+152 silly gunzTarPerm extractEntry app/templates/styles/style.css
+153 silly gunzTarPerm extractEntry app/templates/styles/style_bootstrap.scss
+154 silly gunzTarPerm extractEntry app/templates/gitignore
+155 silly gunzTarPerm extractEntry changelog.md
+156 silly gunzTarPerm extractEntry contributing.md
+157 silly gunzTarPerm extractEntry controller/index.js
+158 silly gunzTarPerm extractEntry controller/templates/base.js
+159 silly gunzTarPerm extractEntry controller/templates/base_edit.js
+160 silly gunzTarPerm extractEntry controller/templates/plural_route.js
+161 silly gunzTarPerm extractEntry controller/templates/single_edit_route.js
+162 silly gunzTarPerm extractEntry controller/templates/single_route.js
+163 silly gunzTarPerm extractEntry .gitattributes
+164 silly gunzTarPerm extractEntry model/index.js
+165 silly gunzTarPerm extractEntry model/templates/base.js
+166 silly gunzTarPerm extractEntry .jshintrc
+167 silly gunzTarPerm extractEntry project/img/screenshots/2013_07_17.png
+168 silly gunzTarPerm extractEntry readme.md
+169 silly gunzTarPerm extractEntry router/index.js
+170 silly gunzTarPerm extractEntry router/templates/base.js
+171 silly gunzTarPerm extractEntry script/reset_dev_env.sh
+172 silly gunzTarPerm extractEntry test/test-compass.js
+173 silly gunzTarPerm extractEntry test/test-file-creation.js
+174 silly gunzTarPerm extractEntry test/test-karma.js
+175 silly gunzTarPerm extractEntry test/test-model.js
+176 silly gunzTarPerm extractEntry test/test-subgenerators.js
+177 silly gunzTarPerm extractEntry view/index.js
+178 silly gunzTarPerm extractEntry view/templates/bound_text_field_view.js
+179 silly gunzTarPerm extractEntry view/templates/plural.js
+180 silly gunzTarPerm extractEntry view/templates/single.js
+181 silly gunzTarPerm extractEntry view/templates/single_edit.js
+182 silly gunzTarPerm extractEntry view/templates/plural.hbs
+183 silly gunzTarPerm extractEntry view/templates/single.hbs
+184 silly gunzTarPerm extractEntry view/templates/single_edit.hbs
+185 silly lockFile 10a28961-pm-generator-ember-0-7-1-package tar:///Users/diana/.npm/generator-ember/0.7.1/package
+186 silly lockFile 10a28961-pm-generator-ember-0-7-1-package tar:///Users/diana/.npm/generator-ember/0.7.1/package
+187 silly lockFile 5735a094-enerator-ember-0-7-1-package-tgz tar:///Users/diana/.npm/generator-ember/0.7.1/package.tgz
+188 silly lockFile 5735a094-enerator-ember-0-7-1-package-tgz tar:///Users/diana/.npm/generator-ember/0.7.1/package.tgz
+189 verbose chmod /Users/diana/.npm/generator-ember/0.7.1/package.tgz 644
+190 verbose chown /Users/diana/.npm/generator-ember/0.7.1/package.tgz [ 501, 20 ]
+191 silly lockFile 9aae0365--ember-generator-ember-0-7-1-tgz https://registry.npmjs.org/generator-ember/-/generator-ember-0.7.1.tgz
+192 silly lockFile 9aae0365--ember-generator-ember-0-7-1-tgz https://registry.npmjs.org/generator-ember/-/generator-ember-0.7.1.tgz
+193 silly lockFile 6f819284-generator-ember-0-7-1 generator-ember@0.7.1
+194 silly lockFile 6f819284-generator-ember-0-7-1 generator-ember@0.7.1
+195 silly resolved [ { name: 'generator-ember',
+195 silly resolved     version: '0.7.1',
+195 silly resolved     description: 'Yeoman generator for Ember',
+195 silly resolved     keywords:
+195 silly resolved      [ 'yeoman-generator',
+195 silly resolved        'scaffold',
+195 silly resolved        'generator',
+195 silly resolved        'framework',
+195 silly resolved        'mvc',
+195 silly resolved        'ember' ],
+195 silly resolved     homepage: 'https://github.com/yeoman/generator-ember',
+195 silly resolved     bugs: { url: 'https://github.com/yeoman/generator-ember/issues' },
+195 silly resolved     author: { name: 'Chrome Developer Relations' },
+195 silly resolved     main: 'app/index.js',
+195 silly resolved     repository:
+195 silly resolved      { type: 'git',
+195 silly resolved        url: 'git://github.com/yeoman/generator-ember.git' },
+195 silly resolved     scripts: { test: 'mocha --reporter spec' },
+195 silly resolved     dependencies: { 'yeoman-generator': '~0.13.1', fleck: '~0.5.1' },
+195 silly resolved     devDependencies: { mocha: '~1.13.0' },
+195 silly resolved     peerDependencies: { 'generator-mocha': '~0.1.1', yo: '>=1.0.0-rc.1.1' },
+195 silly resolved     engines: { node: '>=0.8.0', npm: '>=1.2.10' },
+195 silly resolved     licenses: [ [Object] ],
+195 silly resolved     readme: '# Ember.js Generator [![Build Status](https://secure.travis-ci.org/yeoman/generator-ember.png?branch=master)](http://travis-ci.org/yeoman/generator-ember)\n\nMaintainer: [Anthony Bull](https://github.com/inkredabull)\n\nThe scaffolding tool for Ember.js apps.\n\n![ScreenShot](https://raw.github.com/yeoman/generator-ember/master/project/img/screenshots/2013_07_17.png)\n\n## Table of Contents\n\n* [Pre-reqs](#pre-reqs)\n* [Usage](#usage)\n* [Generators](#generators)\n  * [ember-model](#ember-model)\n  * [ember-view](#ember-view)\n  * [ember-controller](#ember-controller)\n* [Options](#options)\n* [Troubleshooting](#troubleshooting)\n* [Changelog](#changelog)\n* [TODO](#todo)\n* [Contribute](#contribute)\n  * [Basics](#basics)\n  * [Tips](#tips)\n* [Background](#background)\n* [License](#license)\n\n## Pre-reqs\n\n* [npm](http://nodejs.org/)\n* `npm install -g grunt-contrib-compass`\n* Ruby \n \nYou should have one path each for:\n\n  `which ruby && which compass`\n\n## Usage\n\n* `npm install -g generator-ember`\n* `mkdir webapp && cd webapp`\n* `yo ember`\n* `npm install -g grunt-mocha` \n* `grunt server`\n\nA welcome page should appear in your browser.\n\n## Generators\n\nAdd\'l generators:\n\n* ember:model\n* ember:view\n* ember:controller\n\n### ember:model\n\nCreates a model, views, handlebars, controllers, view/edit routes, and some basic fixtures given an arg, as in: \n\n`yo ember:model User name:string zipcode:number`\n\nsee:\n\n* http://localhost:9000/#/users\n\nsee also:\n\n* http://localhost:9000/#/user/1\n* http://localhost:9000/#/user/1/edit\n \n### ember:view\n\nCreates a view and template given an arg, as in\n\n  `yo ember:view Foo`\n\n__KNOWN ISSUE: IF YOU ADD A NEW VIEW, REGARDLESS OF WITH WHICH GENERATOR, YOU HAVE TO RESTART THE SERVER.__ \n\n### ember:controller\n\nCreates a view, handlebar, controller and route given an arg, as in:\n\n  `yo ember:controller Bar`\n\n(and updates router.js, overwrite when prompted)\n\nsee: \n\n* http://localhost:9000/#/bar\n\n## Options\n\n* `--skip-install`\n\n  Skips the automatic execution of `bower` and `npm` after scaffolding has finished.\n\n* `--test-framework=[framework]`\n\n  Defaults to `mocha`. Can be switched for another supported testing framework like `jasmine`.\n\n* `--coffee`\n\n  Enable support for CoffeeScript.\n\n* `--karma`\n\n  Enables support for karma test runner\n\n## Testing\nTesting your app is as simple as running `grunt test`. The generator ships with the\n[karma test runner](http://karma-runner.github.io/0.8/index.html) for running the tests. Integration\ntests are written with [ember-testing](https://github.com/emberjs/ember.js/tree/master/packages/ember-testing)\nand preferably mocha. Karma is highly configurable and you can take a look at the varity of options\non [its website](http://karma-runner.github.io/0.8/index.html).\n\n## Troubleshooting\n\n### Command not found\n\nManifests as: `-bash: yo: command not found`\n\nYou need to make sure that npm is on your path.  Add the following to your .bash_profile (or .bashrc):\n\n`PATH=/usr/local/share/npm/bin:$PATH`\n\n### templateName issues\n\nManifests as: `You specified the templateName ... but it did not exist.`\n\nYou probably added a view; restart the server.\n\n## Changelog\nSee the [changelog file](https://github.com/yeoman/generator-ember/blob/master/changelog.md)\n\n## TODO\n\n* Change tests to instantiate and test objects instead of grepping for text\n* DRY up/refactor tests\n* Consider ES6 as base structure\n* Remove Ruby dependency\n\n## Contribute\n\n### Basics\n\nSee the [contributing docs](https://github.com/yeoman/yeoman/blob/master/contributing.md)\n\nWhen submitting an issue, please follow the [guidelines](https://github.com/yeoman/yeoman/blob/master/contributing.md#issue-submission). Especially important is to make sure Yeoman is up-to-date, and providing the command or commands that cause the issue.\n\nWhen submitting a bugfix, write a test that exposes the bug and fails before applying your fix. Submit the test alongside the fix.\n\nWhen submitting a new feature, add tests that cover the feature.\n\n### Tips\n\nHere are some of the techniques I use; maybe they\'re useful for you.\n\nWhen developing...\n\n* in generator-ember dir, `npm link` to use what\'s in the local repo for `yo ember`\n* wipe the example webapp dir clean (`cd .. && rm -rf webapp`) from time-to-time to ensure the code output is coming from the latest generator (will re-install everything via npm, so be forewarned)\n* script/reset_dev_env.sh is there to help when you don\'t want to wipe and reinstall a test dir with Bower and Node modules again-and-again; read it and understand it before you use it. It\'s good\nif you want to smoke-test changes, bad if you update Bower and/or Node\nmods (ignores removing their subdirs.)\n\n## Background \n\n* Originally inspired by the [Ember Starter Kit](https://github.com/emberjs/starter-kit/archive/v1.0.0-rc.6.zip)\n* Taking influence from [ember_data_example](https://github.com/dgeb/ember_data_example)\n\n## License\n\n[BSD license](http://opensource.org/licenses/bsd-license.php)\n',
+195 silly resolved     readmeFilename: 'readme.md',
+195 silly resolved     _id: 'generator-ember@0.7.1',
+195 silly resolved     dist: { shasum: '84bea47d22ccbc2ad4855ccc764e5c466642451b' },
+195 silly resolved     _from: 'generator-ember@0.7.1',
+195 silly resolved     _resolved: 'https://registry.npmjs.org/generator-ember/-/generator-ember-0.7.1.tgz' } ]
+196 info install generator-ember@0.7.1 into /Users/diana/.rvm/lib
+197 info installOne generator-ember@0.7.1
+198 info /Users/diana/.rvm/lib/node_modules/generator-ember unbuild
+199 info preuninstall generator-ember@0.7.1
+200 info uninstall generator-ember@0.7.1
+201 verbose true,/Users/diana/.rvm/lib/node_modules,/Users/diana/.rvm/lib/node_modules unbuild generator-ember@0.7.1
+202 info postuninstall generator-ember@0.7.1
+203 info /Users/diana/.rvm/lib/node_modules/generator-ember unbuild
+204 info preuninstall generator-ember@0.7.1
+205 info uninstall generator-ember@0.7.1
+206 verbose true,/Users/diana/.rvm/lib/node_modules,/Users/diana/.rvm/lib/node_modules unbuild generator-ember@0.7.1
+207 info postuninstall generator-ember@0.7.1
+208 error error rolling back Error: EACCES, unlink '/Users/diana/.rvm/lib/node_modules/generator-ember/.editorconfig'
+208 error error rolling back  generator-ember@0.7.1 { [Error: EACCES, unlink '/Users/diana/.rvm/lib/node_modules/generator-ember/.editorconfig']
+208 error error rolling back   errno: 3,
+208 error error rolling back   code: 'EACCES',
+208 error error rolling back   path: '/Users/diana/.rvm/lib/node_modules/generator-ember/.editorconfig' }
+209 error Error: EACCES, unlink '/Users/diana/.rvm/lib/node_modules/generator-ember/.editorconfig'
+209 error  { [Error: EACCES, unlink '/Users/diana/.rvm/lib/node_modules/generator-ember/.editorconfig']
+209 error   errno: 3,
+209 error   code: 'EACCES',
+209 error   path: '/Users/diana/.rvm/lib/node_modules/generator-ember/.editorconfig' }
+210 error Please try running this command again as root/Administrator.
+211 error System Darwin 13.0.0
+212 error command "node" "/Users/diana/.rvm/bin/npm" "install" "-g" "generator-ember@0.7.1"
+213 error cwd /Users/diana/code/js-photobooth
+214 error node -v v0.10.22
+215 error npm -v 1.3.17
+216 error path /Users/diana/.rvm/lib/node_modules/generator-ember/.editorconfig
+217 error code EACCES
+218 error errno 3
+219 error stack Error: EACCES, unlink '/Users/diana/.rvm/lib/node_modules/generator-ember/.editorconfig'
+220 verbose exit [ 3, true ]

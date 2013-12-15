@@ -1,0 +1,3 @@
+JsPhotobooth.Router.map(function () {
+  
+});
