@@ -1,0 +1,11 @@
+<div class="row-fluid" id="gallery">
+  <h3>Photo Gallery</h3>
+  <ul class="thumbnails" id="gallery-list">
+    {{#each controller}}
+      <li>
+        <img {{bindAttr src="source"}}>
+        <button {{action 'deletePhoto'}}>Delete</button>
+      </li>
+    {{/each}}
+  </ul>
+</div>

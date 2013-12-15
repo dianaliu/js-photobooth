@@ -1,1 +1,0 @@
-!function(){window.JsPhotobooth=Ember.Application.create()}(),function(){JsPhotobooth.Store=DS.Store.extend(),JsPhotobooth.ApplicationAdapter=DS.FixtureAdapter}(),function(){JsPhotobooth.ApplicationRoute=Ember.Route.extend({model:function(){return["red","yellow","blue"]}})}(),function(){JsPhotobooth.Router.map(function(){})}();
