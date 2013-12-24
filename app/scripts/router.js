@@ -9,6 +9,7 @@ JsPhotobooth.IndexRoute = Ember.Route.extend({
   },
 
   setupController: function(controller) {
-    controller.get('controllers.gallery').set('content', this.store.find('photo'));
+    // controller.get('controllers.gallery').set('content', this.store.find('photo'));
+    controller.get('controllers.gallery').set('content', this.store.all('photo'));
   }
 });

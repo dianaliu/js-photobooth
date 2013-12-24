@@ -21,6 +21,7 @@ JsPhotobooth.CameraController = Ember.ObjectController.extend({
       });
 
       photo.save();
+
     }
   }
 });

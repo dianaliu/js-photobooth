@@ -1,5 +1,6 @@
 <div class="row-fluid" id="gallery">
   <h3>Photo Gallery</h3>
+  <button {{action 'clearGallery'}}>Delete All Photos</button>
   <ul class="thumbnails" id="gallery-list">
     {{#each controller}}
       <li>
