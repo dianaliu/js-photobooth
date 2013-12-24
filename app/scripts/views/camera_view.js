@@ -56,7 +56,7 @@ JsPhotobooth.CameraView = Ember.View.extend({
   },
 
   cameraFail: function() {
-    this.$error.text("Camera is not available");
+    this.$error.show();
     this.$video.css("background-image", "url('images/error-75.png')");
   },
 

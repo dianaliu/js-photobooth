@@ -1,12 +1,24 @@
-<div class="row-fluid" id="gallery">
-  <h3>Photo Gallery</h3>
-  <button {{action 'clearGallery'}}>Delete All Photos</button>
-  <ul class="thumbnails" id="gallery-list">
-    {{#each controller}}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3>Photo Gallery</h3>
+    <button {{action 'clearGallery'}} type="button" class="btn btn-danger">
+      <span class="glyphicon glyphicon-trash"></span>
+      Delete All Photos
+    </button>
+  </div>
+
+  <div class="panel-body">
+    <ul class="list-unstyled">
+      {{#each controller}}
       <li>
-        <img {{bindAttr src="source"}}>
-        <button {{action 'deletePhoto'}}>Delete</button>
+        <img {{bindAttr src="source"}} class="img-thumbnail img-responsive">
+        <button {{action 'deletePhoto'}} type="button" class="btn btn-danger">
+          <span class="glyphicon glyphicon-remove"></span>
+          Delete
+        </button>
       </li>
-    {{/each}}
-  </ul>
+      {{/each}}
+    </ul>
+  </div>
 </div>
+
