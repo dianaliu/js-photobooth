@@ -34,6 +34,8 @@ JsPhotobooth.CameraView = Ember.View.extend({
     // TODO: Add a class or property that holds this state
     // for displaying buttons and messages?
 
+    this.$('#camera_controls').show();
+
     var view = this;
 
     // Clear any error message
