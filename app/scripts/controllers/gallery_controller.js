@@ -9,6 +9,7 @@ JsPhotobooth.GalleryController = Ember.ArrayController.extend({
       // model and content are the same thing
 
       // FIXME: A proper solution
+      // haha or maybe forget localStorage and do it snapchat style?
       this.get('model').clear();
       localStorage.clear();
 
