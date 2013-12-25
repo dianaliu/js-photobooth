@@ -1,10 +1,12 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3>Photo Gallery</h3>
+    {{#if model}}
     <button {{action 'clearGallery'}} type="button" class="btn btn-danger">
       <span class="glyphicon glyphicon-trash"></span>
       Delete All Photos
     </button>
+    {{/if}}
   </div>
 
   <div class="panel-body">
