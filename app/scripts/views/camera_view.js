@@ -18,11 +18,11 @@ JsPhotobooth.CameraView = Ember.View.extend({
     // Initialize elements
     this.video = document.getElementById("video");
     this.$video = Ember.$('#video');
-    this.$error = Ember.$('#errorMessage');
+    this.$error = Ember.$('#errorMessage p');
 
     // Check if modern browser
     if (!navigator.getUserMedia) {
-      this.$error.innerHTML = 'Sorry. <code>navigator.getUserMedia()</code> is not available.';
+      this.$error.text("Sorry, your browser is not supported");
       return;
     }
 
@@ -56,7 +56,7 @@ JsPhotobooth.CameraView = Ember.View.extend({
   },
 
   cameraFail: function() {
-    this.$error.show();
+    this.$error.text('Camera is not available').parent().show();
     this.$video.css("background-image", "url('images/error-75.png')");
   },
 
