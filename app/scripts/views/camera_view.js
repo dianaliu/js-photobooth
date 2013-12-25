@@ -7,6 +7,8 @@ JsPhotobooth.CameraView = Ember.View.extend({
   },
 
   initCamera: function() {
+    // TODO: Flip image.
+
     // Account for cross browser differences
     navigator.getUserMedia = navigator.webkitGetUserMedia || navigator.getUserMedia;
     window.URL = window.URL || window.webkitURL;
