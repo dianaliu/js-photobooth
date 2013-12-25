@@ -15,7 +15,8 @@ JsPhotobooth.CameraController = Ember.ObjectController.extend({
 
       // Make a png from the canvas.
       var photo = this.store.createRecord('photo', {
-        source: this.get('canvas').toDataURL('image/png')
+        source: this.get('canvas').toDataURL('image/png'),
+        created_at: new Date()
       });
 
       // FIXME: doesn't warn anymore?

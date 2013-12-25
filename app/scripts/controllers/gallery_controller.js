@@ -1,6 +1,10 @@
 JsPhotobooth.GalleryController = Ember.ArrayController.extend({
   itemController: 'photo',
 
+  sortProperties: ['created_at'],
+
+  sortAscending: false,
+
   actions: {
     clearGallery: function() {
       console.log('clearGallery');
