@@ -1,16 +1,20 @@
 <div id="errorMessage" class="alert alert-warning">
   <p>Camera is not available.</p>
 </div>
-{{outlet camera}}
 
 <div class="row">
-<!--   <div class="col-md-6">
-    <h2>Stickers</h2>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-  </div> -->
-  <div class="col-md-6">
-    {{outlet gallery}}
+  <div class="col-md-8">
+    {{outlet camera}}
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <p>Hi, click allow up there to turn on your camera.</p>
+    </div>
+
+    <div class="col-md-4">
+      {{outlet gallery}}
+    </div>
   </div>
 </div>
 

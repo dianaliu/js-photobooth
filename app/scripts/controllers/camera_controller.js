@@ -11,6 +11,8 @@ JsPhotobooth.CameraController = Ember.ObjectController.extend({
       // Uncaught QuotaExceededError: An attempt was made to add something to storage that exceeded the quota.
       // then, you can't even clearPictures
 
+      this.flashPage();
+
       // Draw the current video to canvas.
       this.get('layersContainer').markRectsDamaged();
       this.get('layersContainer').redraw();
@@ -21,7 +23,13 @@ JsPhotobooth.CameraController = Ember.ObjectController.extend({
       });
 
       photo.save();
-
     }
+  },
+
+  flashPage: function() {
+    Ember.$('body').css('background-color', '#FFFF00');
+    setTimeout(function() {
+      Ember.$('body').css('background-color', 'white');
+    }, 300);
   }
 });
