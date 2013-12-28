@@ -6,6 +6,10 @@ JsPhotobooth.PhotoController = Ember.ObjectController.extend({
       this.get('model').deleteRecord();
       this.get('model').save();
 
+    },
+
+    tweetPicture: function() {
+
     }
   }
 });
