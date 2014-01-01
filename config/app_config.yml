@@ -1,0 +1,9 @@
+development:
+  twitter_consumer_key: gsUzh9tcPNATjYHm8zu1A
+  twitter_consumer_secret: 7LjesrGt8mLvTm30X9Hxi5HhvJBOe13htwqaw4Hok
+production:
+  twitter_consumer_key: gsUzh9tcPNATjYHm8zu1A
+  twitter_consumer_secret: 7LjesrGt8mLvTm30X9Hxi5HhvJBOe13htwqaw4Hok
+test:
+  twitter_consumer_key: gsUzh9tcPNATjYHm8zu1A
+  twitter_consumer_secret: 7LjesrGt8mLvTm30X9Hxi5HhvJBOe13htwqaw4Hok
