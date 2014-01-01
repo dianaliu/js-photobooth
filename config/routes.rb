@@ -1,6 +1,6 @@
 Photobooth::Application.routes.draw do
-  get "photos/show"
   root 'users#index'
+
   resources :users do
     resources :photos
   end
