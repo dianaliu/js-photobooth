@@ -1,0 +1,34 @@
+<div class="panel panel-default photo-gallery">
+  <div class="panel-heading">
+    <h3>
+      <span class="glyphicon glyphicon-lock"></span>
+      Saved Souls
+    </h3>
+    <% if @user.photos %>
+    <button action="<%= user_photos_path(@user, :method => :delete, :remote => true) %>" type="button" class="btn btn-danger">
+      <span class="glyphicon glyphicon-trash"></span>
+      Delete All Souls
+    </button>
+    <% end %>
+  </div>
+
+  <div class="panel-body">
+    <ul class="list-unstyled">
+      <% @user.photos.each do |photo| %>
+      <li>
+        <%= link_to image_tag(photo.url, :class => "img-thumbnail img-responsive"), user_photo_path(photo.user, photo.id) %>
+        <button action="<%= user_photo_path(photo.user, photo.id, :method => :delete, :remote => true) %>" type="button" class="btn btn-danger">
+          <span class="glyphicon glyphicon-remove"></span>
+          Delete
+        </button>
+
+        <button type="button" class="btn btn-info">
+          <span class="glyphicon glyphicon-share-alt"></span>
+          Tweet   Picture
+        </button>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+

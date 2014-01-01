@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   serialize :credentials
+  validates_presence_of :name
 
   has_many :photos
 
