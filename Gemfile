@@ -34,7 +34,7 @@ gem 'ember-source', '1.2.0'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'twitter'
-gem "twitter-bootstrap-rails"
+gem 'bootstrap-sass', '~> 3.0.3.0'
 
 group :development, :test do
   gem 'awesome_print'
