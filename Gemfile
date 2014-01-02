@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'ember-rails'
 gem 'ember-source', '1.2.0'
+# gem 'active_model_serializers'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'twitter'

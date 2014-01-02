@@ -2,7 +2,8 @@ Photobooth::Application.routes.draw do
   root 'users#index'
 
   resources :users do
-    resources :photos
+    resources :photos do
+    end
   end
 
   get 'auth/:provider/callback', to: 'sessions#create'

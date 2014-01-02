@@ -26,3 +26,19 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+### TODO
+- Add tests
+- Fix error message not displaying after quota exceeded
+- Fix camera doesn't always initialize
+- Don't use localStorage?
+- Use Twitter [update with media API](https://dev.twitter.com/docs/api/1/post/statuses/update_with_media) to tweet pics
+- Use node with browserify for getusermedia?
+- Serve pages off node?
+- Camera on mobile? - nope, just like opera.
+- Auto gif videos?
+- Obfuscate urls - user and photo number. Add guids or use usernames? checkout https://github.com/norman/friendly_id
+- Individual page has next and previous buttons to users photos
+- Add format.png for download link on photo#show
+

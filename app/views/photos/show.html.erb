@@ -1,2 +1,9 @@
-<h1>Photos#show</h1>
-<p>Find me in app/views/photos/show.html.erb</p>
+  <div class="row text-center">
+    <div class="media">
+      <legend>
+        <%= link_to @photo.user.name, user_path(@photo.user) %>
+      </legend>
+      <%= link_to image_tag(@photo.url, :class => "media-object"), @photo.url, :class => "img-responsive img-thumbnail" %>
+    </div>
+  </div>
+

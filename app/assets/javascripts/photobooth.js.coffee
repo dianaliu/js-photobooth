@@ -1,5 +1,7 @@
 # for more details see: http://emberjs.com/guides/application/
-window.Photobooth = Ember.Application.create()
+window.Photobooth = Ember.Application.create({
+  rootElement: '.container'
+})
 
 #= require ./store
 #= require_tree ./models
