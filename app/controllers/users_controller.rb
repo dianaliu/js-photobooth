@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
-    @user = current_user
+    @user = current_user || User.new
+    render json: @user if request.xhr?
   end
 
   def show

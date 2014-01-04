@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>In†erne† Phø†obøø†h</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -35,9 +35,9 @@
   </nav>
 
   <div class="container">
-    <div class="main">
-      <%= yield %>
+    <div class="ember-container">
     </div>
+    <%= yield %>
 
     <hr />
     <footer class="text-center">

@@ -16,14 +16,14 @@ Photobooth.IndexRoute = Ember.Route.extend({
 
 
 Photobooth.UsersRoute = Ember.Route.extend({
-  // renderTemplate: function() {
-  //   this.render('index');
-  //   this.render('camera', { outlet: 'camera' , into: 'index' });
-  //   this.render('gallery', { outlet: 'gallery', into: 'index' });
-  // },
+  renderTemplate: function() {
+    this.render('users');
+    this.render('camera', { outlet: 'camera' , into: 'index' });
+    this.render('gallery', { outlet: 'gallery', into: 'index' });
+  },
 
-  // setupController: function(controller) {
-  //   console.log('setupController');
-  //   controller.get('controllers.gallery').set('content', this.store.find('user'));
-  // }
+  setupController: function(controller) {
+    console.log('setupController');
+    controller.get('controllers.gallery').set('content', Photobooth.User.find());
+  }
 });
