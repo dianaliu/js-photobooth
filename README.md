@@ -1,32 +1,7 @@
-== README
+### About
+This is me trying to cram as many new techs in one app while making something fun.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
-
+View at http://mysterious-shore-4281.herokuapp.com/
 
 ### TODO
 - Add tests
@@ -41,4 +16,8 @@ Please feel free to use a different markup language if you do not plan to run
 - Obfuscate urls - user and photo number. Add guids or use usernames? checkout https://github.com/norman/friendly_id
 - Individual page has next and previous buttons to users photos
 - Add format.png for download link on photo#show
+- Don't make user log in to take and save imgs, create anons - would they have delete permission then? or auto delete from server after x minutes? scheduler.
+- tweet button script blocks loading of page, esp when many
+- disable turbolinks so ember will work
+- clean up commits
 

@@ -1,1 +1,23 @@
 @import "bootstrap";
+
+video {
+  border: 1px solid gray;
+}
+
+#photo, #camera_controls {
+  display: none;
+}
+
+.photo-gallery {
+  text-align: center;
+
+  .panel-body {
+    li {
+      margin: 15px 0px;
+    }
+
+    img {
+      margin-bottom: 10px;
+    }
+  }
+}

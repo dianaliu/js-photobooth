@@ -9,6 +9,8 @@ Photobooth.CameraView = Ember.View.extend({
   initCamera: function() {
     // TODO: Flip image.
 
+    console.log('initCamera');
+
     // Account for cross browser differences
     navigator.getUserMedia = navigator.webkitGetUserMedia || navigator.getUserMedia;
     window.URL = window.URL || window.webkitURL;
@@ -20,7 +22,9 @@ Photobooth.CameraView = Ember.View.extend({
     // Initialize elements
     this.video = document.getElementById("video");
     this.$video = Ember.$('#video');
-    this.$error = Ember.$('#errorMessage p');
+    this.$alertText = Ember.$('.alert p');
+
+    console.log('set els: ', this.$video, this.$alertText);
 
     // Check if modern browser
     if (!navigator.getUserMedia) {
@@ -33,16 +37,21 @@ Photobooth.CameraView = Ember.View.extend({
   },
 
   cameraSuccess: function(stream) {
+    // FIXME: Not called.
     // TODO: Add a class or property that holds this state
     // for displaying buttons and messages?
 
-    this.$error.parent().hide();
+    console.log('cameraSuccess, what els?');
+    console.log(this.$alertText);
+
+
+    this.$alertText.parent().hide();
     this.$('#camera_controls').show();
 
     var view = this;
 
     // Clear any error message
-    this.$error.text("");
+    this.$alertText.text("");
 
     // Only Opera lets you use the stream directly
     this.video.src = (window.URL ? window.URL.createObjectURL(stream) : stream);
@@ -59,7 +68,7 @@ Photobooth.CameraView = Ember.View.extend({
   },
 
   cameraFail: function() {
-    this.$error.text('Camera is not available').parent().show();
+    this.$alertText.text('Camera is not available').parent().show();
     this.$video.css("background-image", "url('images/error-75.png')");
   },
 

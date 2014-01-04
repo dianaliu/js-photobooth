@@ -1,6 +1,6 @@
 # for more details see: http://emberjs.com/guides/application/
 window.Photobooth = Ember.Application.create({
-  rootElement: '.container'
+  rootElement: '.main'
 })
 
 #= require ./store
