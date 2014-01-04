@@ -19,9 +19,8 @@ Photobooth.CameraController = Ember.ObjectController.extend({
         created_at: new Date()
       });
 
-      // FIXME: doesn't warn anymore?
       // FIXME: sometimes produces non-image.
-      photo.save(null, this.warnOutOfSpace);
+      photo.save(null);
     }
   },
 
@@ -30,16 +29,5 @@ Photobooth.CameraController = Ember.ObjectController.extend({
     setTimeout(function() {
       Ember.$('body').css('background-color', 'white');
     }, 300);
-  },
-
-  warnOutOfSpace: function() {
-    // TODO: Abstract warns to app scope
-
-    console.log('warn out of space');
-
-    this.$error = Ember.$('#errorMessage p');
-
-    this.$error.text('Error saving image. Click "Delete All Photos" and try again.');
-    this.$error.parent().show();
   }
 });
