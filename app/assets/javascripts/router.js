@@ -23,15 +23,21 @@ Photobooth.UsersRoute = Ember.Route.extend({
   },
 
   setupController: function(controller) {
-    // Calls users#index
-    // Photobooth.User.find();
-
     console.log('setupController');
 
-    // Try getting user from server (async)
-    // will it update the controllers automatically once it has come back?
+    this.store.find('user').then(function(a,b,c) {
+      console.log('user success', model);
+      console.log(model.get('id'));
+      console.log(model.get('photos'));
+    }, function(xhr) {
+      console.log('user error', xhr.responseText);
+    });
+
+    // FIXME: Is store.find async?
+    // If async, will it update the controllers automatically?
     var user = this.store.createRecord('user', { name: "anon" });
-    // user.save();
+
+    console.log(user.get('id'));
 
     controller.get('controllers.gallery').set('content', user.get('photos'));
     controller.get('controllers.camera').set('content', user);

@@ -6,12 +6,15 @@ class UsersController < ApplicationController
   end
 
   def index
+    # Called on ember init to load user
+    # TODO: Need to return user.photos, what format?
     @user = current_user || User.new
     render json: { :users => @user } if request.xhr?
   end
 
   def show
-    @user = User.find(params[:id]) || User.new()
+    # show 'profile' pages
+    @user = User.find(params[:id])
     render json: { :users => @user } if request.xhr?
   end
 
