@@ -1,3 +1,5 @@
 Photobooth.Photo = DS.Model.extend({
-  user: DS.belongsTo('user')
+  user: DS.belongsTo('user'),
+
+  url: DS.attr('string')
 });
