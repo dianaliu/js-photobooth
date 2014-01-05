@@ -15,12 +15,18 @@ Photobooth.CameraController = Ember.ObjectController.extend({
       this.get('layersContainer').markRectsDamaged();
       this.get('layersContainer').redraw();
 
-      // Make a png from the canvas.
-      var photo = Photobooth.Photo.createRecord({
-        url: this.get('canvas').toDataURL('image/png'),
-      });
+      this.get('store').create({ name: "diana"});
 
-      photo.save();
+      // var user = new Photobooth.User({ name: "diana" });
+
+      // user.save();
+
+      // Make a png from the canvas.
+      // var photo = Photobooth.Photo.createRecord({
+      //   url: this.get('canvas').toDataURL('image/png'),
+      // });
+
+      // photo.save();
     }
   },
 

@@ -1,4 +1,9 @@
 class PhotosController < ApplicationController
+
+  def create
+
+  end
+
   def show
     @photo = Photo.find(params[:id])
   end
