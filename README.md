@@ -26,5 +26,5 @@ View at http://mysterious-shore-4281.herokuapp.com/
 - Double check error callbacks
 - Update Ember Data version
 - Fallback to localstorage for anon user, but you can't use two adapters at once http://stackoverflow.com/questions/14814472/caching-remote-data-in-local-storage-with-emberdata
--
+- Add warning, log in to save pictures or else they will disappear when you navigate away.
 

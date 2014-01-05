@@ -5,11 +5,6 @@ Photobooth.GalleryController = Ember.ArrayController.extend({
 
   sortAscending: false,
 
-  init: function() {
-    console.log('init GalleryController');
-    console.log(this.get('model'));
-  },
-
   actions: {
     clearGallery: function() {
       console.log('clearGallery');

@@ -16,7 +16,7 @@
     <ul class="list-unstyled">
       {{#each controller}}
       <li>
-        <img {{bindAttr src="source"}} class="img-thumbnail img-responsive">
+        <img {{bindAttr src="url"}} class="img-thumbnail img-responsive">
         <button {{action 'deletePhoto'}} type="button" class="btn btn-danger">
           <span class="glyphicon glyphicon-remove"></span>
           Delete

@@ -18,7 +18,7 @@ Photobooth.UsersRoute = Ember.Route.extend({
   renderTemplate: function() {
     // TODO: Need to set controllers?
     this.render('users');
-    this.render('camera', { outlet: 'camera' , into: 'users', controller: 'camera' });
+    this.render('camera', { outlet: 'camera' , into: 'users' });
     this.render('gallery', { outlet: 'gallery', into: 'users' });
   },
 
@@ -29,10 +29,11 @@ Photobooth.UsersRoute = Ember.Route.extend({
     console.log('setupController');
 
     var user = this.store.createRecord('user', { name: "diana" });
-    // console.log('user', user, user.get('photos'));
     // user.save();
 
-    // controller.get('controllers.gallery').set('content', );
+    console.log(user);
+
+    controller.get('controllers.gallery').set('content', user.get('photos'));
     controller.get('controllers.camera').set('content', user);
   }
 });
