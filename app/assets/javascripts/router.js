@@ -23,7 +23,11 @@ Photobooth.UsersRoute = Ember.Route.extend({
   },
 
   setupController: function(controller) {
+    // Calls users#index
+    // Photobooth.User.find();
+
     console.log('setupController');
-    controller.get('controllers.gallery').set('content', Photobooth.User.find());
+    // controller.get('controllers.gallery').set('content', );
+    controller.get('controllers.camera').set('content', new Photobooth.User());
   }
 });

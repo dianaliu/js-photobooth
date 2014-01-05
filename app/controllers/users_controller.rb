@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:id]) || User.new()
     render json: { :users => @user } if request.xhr?
   end
 end
