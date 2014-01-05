@@ -3,7 +3,7 @@ Photobooth.CameraView = Ember.View.extend({
     this._super();
     Ember.run.scheduleOnce('afterRender', this, function(){
       this.initCamera();
-     });
+    });
   },
 
   initCamera: function() {
@@ -12,7 +12,9 @@ Photobooth.CameraView = Ember.View.extend({
     console.log('initCamera');
 
     // Account for cross browser differences
-    navigator.getUserMedia = navigator.webkitGetUserMedia || navigator.getUserMedia;
+    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ||
+      navigator.mozGetUserMedia || navigator.msGetUserMedia;
+
     window.URL = window.URL || window.webkitURL;
 
     // Initialize controller elements
@@ -32,8 +34,14 @@ Photobooth.CameraView = Ember.View.extend({
       return;
     }
 
+    this.$alertText.text("requesting access");
+
     // Request access to camera
     navigator.getUserMedia({ video: true }, this.cameraSuccess.bind(this), this.cameraFail.bind(this));
+    // navigator.getUserMedia({ video: true }, this.cameraSuccess, this.cameraFail);
+    // navigator.getUserMedia({ video: true }, function() { alert("s") }, function() { alert("e") });
+
+
   },
 
   cameraSuccess: function(stream) {

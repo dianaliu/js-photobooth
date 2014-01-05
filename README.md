@@ -22,4 +22,6 @@ View at http://mysterious-shore-4281.herokuapp.com/
 - clean up commits
 - use rails-api gem
 - visualization and graphics libs like raphael and d3
+- Modernizr? for getUserMedia?
+- Double check error callbacks
 

@@ -18,7 +18,7 @@ Photobooth.UsersRoute = Ember.Route.extend({
   renderTemplate: function() {
     // TODO: Need to set controllers?
     this.render('users');
-    this.render('camera', { outlet: 'camera' , into: 'users' });
+    this.render('camera', { outlet: 'camera' , into: 'users', controller: 'camera' });
     this.render('gallery', { outlet: 'gallery', into: 'users' });
   },
 
