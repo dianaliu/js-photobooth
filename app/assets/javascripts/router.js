@@ -28,7 +28,9 @@ Photobooth.UsersRoute = Ember.Route.extend({
 
     console.log('setupController');
 
-    var user = this.store.createRecord('user', { name: "diana" });
+    // Try getting user from server (async)
+    // will it update the controllers automatically once it has come back?
+    var user = this.store.createRecord('user', { name: "anon" });
     // user.save();
 
     controller.get('controllers.gallery').set('content', user.get('photos'));

@@ -14,7 +14,14 @@ Photobooth.PhotoController = Ember.ObjectController.extend({
     },
 
     tweetPicture: function() {
+      var user = this.get('model').get('user');
 
+      if(user.get('isNew')) {
+        // save any existing photos
+        // redirect to twitter oauth
+      } else {
+        // pop up the tweet window
+      }
     }
   }
 });

@@ -28,4 +28,8 @@ View at http://mysterious-shore-4281.herokuapp.com/
 - Fallback to localstorage for anon user, but you can't use two adapters at once http://stackoverflow.com/questions/14814472/caching-remote-data-in-local-storage-with-emberdata
 - Add warning, log in to save pictures or else they will disappear when you navigate away.
 - You'd need to save the pictures under local storage (would run out of space very quickly) or to db first, then when you get back from oauth, update db with credentials, username, etc.
+- Login with twitter:
+  - save the user to server, then go to oauth, when you come back, load the right user, should be in session.
+  - move to ember, is this restful?
+- Can tweet if not logged in. Okay, but at first only show tweet button if logged in
 

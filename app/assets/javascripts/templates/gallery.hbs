@@ -14,17 +14,22 @@
 
   <div class="panel-body">
     <ul class="list-unstyled">
-      {{#each controller}}
+      {{#each photo in controller}}
       <li>
         <img {{bindAttr src="url"}} class="img-thumbnail img-responsive">
         <button {{action 'deletePhoto'}} type="button" class="btn btn-danger">
           <span class="glyphicon glyphicon-remove"></span>
           Delete
         </button>
+
+      {{#if user.id}}
+        <p>the user has id</p>
         <button {{action 'tweetPicture'}} type="button" class="btn btn-info">
           <span class="glyphicon glyphicon-share-alt"></span>
           Tweet Picture
         </button>
+      {{/if}}
+
       </li>
       {{/each}}
     </ul>

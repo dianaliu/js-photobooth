@@ -17,6 +17,8 @@ Photobooth.CameraController = Ember.ObjectController.extend({
 
       var photo = this.store.createRecord('photo', { url: this.get('canvas').toDataURL('image/png') });
       this.get('model').get('photos').pushObject(photo);
+
+      // TODO: If user is logged in, save
     }
   },
 
