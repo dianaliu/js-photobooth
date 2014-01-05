@@ -31,8 +31,6 @@ Photobooth.UsersRoute = Ember.Route.extend({
     var user = this.store.createRecord('user', { name: "diana" });
     // user.save();
 
-    console.log(user);
-
     controller.get('controllers.gallery').set('content', user.get('photos'));
     controller.get('controllers.camera').set('content', user);
   }
