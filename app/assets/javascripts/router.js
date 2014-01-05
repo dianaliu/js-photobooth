@@ -14,12 +14,12 @@ Photobooth.IndexRoute = Ember.Route.extend({
   }
 });
 
-
 Photobooth.UsersRoute = Ember.Route.extend({
   renderTemplate: function() {
+    // TODO: Need to set controllers?
     this.render('users');
-    this.render('camera', { outlet: 'camera' , into: 'index' });
-    this.render('gallery', { outlet: 'gallery', into: 'index' });
+    this.render('camera', { outlet: 'camera' , into: 'users' });
+    this.render('gallery', { outlet: 'gallery', into: 'users' });
   },
 
   setupController: function(controller) {

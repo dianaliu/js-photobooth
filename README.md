@@ -20,4 +20,6 @@ View at http://mysterious-shore-4281.herokuapp.com/
 - tweet button script blocks loading of page, esp when many
 - disable turbolinks so ember will work
 - clean up commits
+- use rails-api gem
+- visualization and graphics libs like raphael and d3
 

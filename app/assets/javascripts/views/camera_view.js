@@ -37,6 +37,9 @@ Photobooth.CameraView = Ember.View.extend({
   },
 
   cameraSuccess: function(stream) {
+    console.log('cameraSuccess');
+
+
     // FIXME: Not called.
     // TODO: Add a class or property that holds this state
     // for displaying buttons and messages?
@@ -68,12 +71,17 @@ Photobooth.CameraView = Ember.View.extend({
   },
 
   cameraFail: function() {
+    console.log('cameraFail');
+
     this.$alertText.text('Camera is not available').parent().show();
     this.$video.css("background-image", "url('images/error-75.png')");
   },
 
   showCanvas: function() {
     // TODO: What is going on here? Add comments!
+    console.log('showCanvas');
+
+
 
     var view = this;
 

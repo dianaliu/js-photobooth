@@ -1,5 +1,7 @@
 Photobooth.CameraController = Ember.ObjectController.extend({
   init: function() {
+    console.log('init CameraController');
+
     // Initialize properties for view to access
     this.set('layersContainer', null);
     this.set('canvas', null);
@@ -20,7 +22,7 @@ Photobooth.CameraController = Ember.ObjectController.extend({
       });
 
       // FIXME: sometimes produces non-image.
-      photo.save(null);
+      // photo.save(null);
     }
   },
 
