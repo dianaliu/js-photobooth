@@ -16,9 +16,11 @@ Photobooth.CameraController = Ember.ObjectController.extend({
       this.get('layersContainer').redraw();
 
       // Make a png from the canvas.
-      var photo = this.store.createRecord('photo', {
-        source: this.get('canvas').toDataURL('image/png'),
-        created_at: new Date()
+      var photo = this.get('store').get('adapter').createRecord('photos', {
+        photo: {
+          source: this.get('canvas').toDataURL('image/png'),
+          created_at: new Date()
+        }
       });
 
       // FIXME: sometimes produces non-image.
@@ -30,6 +32,6 @@ Photobooth.CameraController = Ember.ObjectController.extend({
     Ember.$('body').css('background-color', 'yellow');
     setTimeout(function() {
       Ember.$('body').css('background-color', 'white');
-    }, 300);
+    }, 150);
   }
 });

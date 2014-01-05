@@ -30,7 +30,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'ember-rails'
-gem 'ember-source', '1.2.0'
+gem 'ember-source', '1.2.0.1'
 # gem 'active_model_serializers'
 gem 'omniauth'
 gem 'omniauth-twitter'

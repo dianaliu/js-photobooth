@@ -24,4 +24,5 @@ View at http://mysterious-shore-4281.herokuapp.com/
 - visualization and graphics libs like raphael and d3
 - Modernizr? for getUserMedia?
 - Double check error callbacks
+- Update Ember Data version
 

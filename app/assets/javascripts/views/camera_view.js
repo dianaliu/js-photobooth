@@ -17,14 +17,19 @@ Photobooth.CameraView = Ember.View.extend({
 
     window.URL = window.URL || window.webkitURL;
 
-    // Initialize controller elements
-    this.set('controller.layersContainer', null);
-    this.set('controller.canvas', document.getElementById("photo"));
-
     // Initialize elements
     this.video = document.getElementById("video");
     this.$video = Ember.$('#video');
     this.$alertText = Ember.$('.alert p');
+
+    // Initialize controller elements
+    this.set('controller.layersContainer', null);
+    this.set('controller.canvas', document.getElementById("photo"));
+
+    if(!navigator.getUserMedia) {
+      this.$alertText.text('Sorry, your browser is not supported');
+      return false;
+    }
 
     console.log('set els: ', this.$video, this.$alertText);
 
@@ -38,10 +43,6 @@ Photobooth.CameraView = Ember.View.extend({
 
     // Request access to camera
     navigator.getUserMedia({ video: true }, this.cameraSuccess.bind(this), this.cameraFail.bind(this));
-    // navigator.getUserMedia({ video: true }, this.cameraSuccess, this.cameraFail);
-    // navigator.getUserMedia({ video: true }, function() { alert("s") }, function() { alert("e") });
-
-
   },
 
   cameraSuccess: function(stream) {
